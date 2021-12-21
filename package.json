@@ -1,0 +1,31 @@
+{
+  "name": "mandat4",
+  "version": "1.0.0",
+  "description": "mandat4",
+  "main": "requetes.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "knex": "^0.95.14",
+    "mssql": "^7.3.0",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon requetes.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seobu/mandat4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seobu/mandat4/issues"
+  },
+  "homepage": "https://github.com/seobu/mandat4#readme"
+}
