@@ -25,7 +25,9 @@ async function competencesDunProgramme(idProgramme) {
 	const resultat = {  
 	donnees: [],
 	groupes: [],
-	pied: []
+	stats: [],
+	pied : []
+
   };  
 
 	resultat.donnees = await knex('competences')
@@ -35,8 +37,9 @@ async function competencesDunProgramme(idProgramme) {
 
 	resultat.groupes.push({ format: 'Compétences du programme %', valeurs: ['idProgramme'] });
 	resultat.groupes.push({ format: '% %', valeurs: ['code', 'enonce'] });
-	resultat.pied.push({format : 'Detail %', valeurs: ['code']
-	})
+	resultat.stats.push({donnees:'code', resultat : 0})
+	// resultat.pied.push({format : 'Detail %', valeurs: 'code'});
+	
 	return resultat;
 }
 

@@ -8,17 +8,9 @@ function formaterLigne(ligne, { format, valeurs }) {
 
 }
 
-function formaterPied(ligne,{format,valeurs}){
-    let values = format
-    for (let i = 0; i <valeurs.length; i++){
-        values = values.replace('%',valeurs[i]);
-    }
-    return values;
-}
-
 function templateListe({ groupes, donnees }) {
     let elements = '';
-    const title = ["is-size-1", "is-size-3", "is-size-5"];
+    const title = ["is-size-1","is-size-3","is-size-5"];
     const couleur = ["has-background-primary", "has-background-danger", "has-background-warning", "has-background-info"];
     const entetes = [];
     entetes[groupes.length - 1] = '';
@@ -36,14 +28,8 @@ function templateListe({ groupes, donnees }) {
         }
         for (let i = idxEnteteAAfficher; i < groupes.length - 1; i += 1) {
             // Affiche l'entête actualisée
-            if (i === 1 && idxLigne!== 0 ){
-                elements += `<ul>detail</ul>`
-            }
-            elements += `<h${i + 1} class="is-size-${i + 2}"><ul class=${couleur[i]}>${entetes[i]}</ul></h${i + 1}>`;
-            
-        
-    }
-
+            elements += `<h${i + 1} class="is-size-${i+2}"><ul class=${couleur[i]}>${entetes[i]}</ul></h${i + 1}>`;
+        }
 
         // Affiche le détail
         const detail = formaterLigne(donnees[idxLigne], groupes[groupes.length - 1]);
@@ -51,7 +37,7 @@ function templateListe({ groupes, donnees }) {
         elements += `<p class=${title[7]}><div class=${couleur[3]}>${detail}</div></p>`;
         idxLigne += 1;
     }
-
+    
 
     const html = `<!DOCTYPE html>
         <html lang="en">
@@ -68,14 +54,10 @@ function templateListe({ groupes, donnees }) {
         div{
             margin-bottom : 7px;
         }
-
       </style>
         <body>
-
           ${elements}
-
         </body>
-
         </html>`;
 
     return html;
